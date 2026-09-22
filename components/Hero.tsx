@@ -1,12 +1,25 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 
+const slides = ["/hero-cake.jpg", "/hero-cake 2.jpg", "/hero-cake 3.jpg"];
+
 export default function Hero() {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((current) => (current + 1) % slides.length);
+    }, 2500);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section id="home" className="bg-[#FAF7F2] py-12 md:py-20 text-slate-800">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid items-center gap-12 lg:grid-cols-12">
-          
-          {/* Content Left */}
           <div className="lg:col-span-6">
             <h1 className="mt-3 font-display text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
               The Best Quality <br />
@@ -42,21 +55,40 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Graphic Right */}
           <div className="relative lg:col-span-6">
-            {/* Main Solid Background Frame */}
             <div className="relative mx-auto aspect-square max-w-md overflow-hidden rounded-3xl bg-[#c4885f]">
-              <Image
-                src="/hero-cake.jpg"
-                alt="Freshly baked treats by Niah's Bites"
-                fill
-                className="object-cover"
-                priority
-              />
+              <div
+                className="flex h-full w-full transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+              >
+                {slides.map((slide, index) => (
+                  <div key={slide + index} className="relative h-full min-w-full">
+                    <Image
+                      src={slide}
+                      alt="Freshly baked treats by Niah's Bites"
+                      fill
+                      className="object-cover"
+                      priority={index === 0}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
+            <div className="mt-4 flex justify-center gap-2">
+              {slides.map((slide, index) => (
+                <button
+                  key={slide + index}
+                  type="button"
+                  onClick={() => setActiveIndex(index)}
+                  className={`h-2.5 w-2.5 rounded-full transition-all ${
+                    activeIndex === index ? "bg-[#7a3e2e]" : "bg-[#d9b9a0]"
+                  }`}
+                  aria-label={`Show slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
-
         </div>
       </div>
     </section>
