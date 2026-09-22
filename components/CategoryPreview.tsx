@@ -8,37 +8,37 @@ const categories = [
 
 export default function CategoryPreview() {
   return (
-    <section id="menu" className="py-16 md:py-24 bg-bg">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <span className="font-body text-xs font-bold uppercase tracking-widest text-accent">
+    <section id="menu" className="bg-bg py-12 md:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="mb-8 text-center md:mb-12">
+          <span className="font-body text-[10px] font-bold uppercase tracking-[0.22em] text-accent md:text-xs">
             What We Offer
           </span>
-          <h2 className="mt-2 font-display text-3xl md:text-4xl text-primary">
+          <h2 className="mt-2 font-display text-2xl text-primary md:text-4xl">
             Browse Our Menu
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 md:gap-6">
           {categories.map((cat) => (
             <a
               key={cat.name}
               href="#contact"
-              className="group flex flex-col justify-between rounded-2xl border border-primary/10 bg-white p-6 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg"
+              className="group flex flex-col justify-between rounded-2xl border border-primary/10 bg-white p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg md:p-6"
             >
               <div>
-                <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent/15 text-2xl transition-transform duration-200 group-hover:scale-110">
+                <div className="mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full bg-accent/15 text-lg transition-transform duration-200 group-hover:scale-110 md:mb-4 md:h-14 md:w-14 md:text-2xl">
                   {cat.icon}
                 </div>
-                <h3 className="font-body text-base font-semibold text-text group-hover:text-primary transition-colors">
+                <h3 className="font-body text-xs font-semibold text-text transition-colors group-hover:text-primary md:text-base">
                   {cat.name}
                 </h3>
-                <p className="mt-1.5 font-body text-xs text-text/60 leading-relaxed">
+                <p className="mt-1 font-body text-[10px] leading-relaxed text-text/60 md:text-xs">
                   {cat.blurb}
                 </p>
               </div>
 
-              <span className="mt-4 inline-block font-body text-xs font-medium text-accent group-hover:underline">
+              <span className="mt-3 inline-block font-body text-[10px] font-medium text-accent group-hover:underline md:mt-4 md:text-xs">
                 Order now &rarr;
               </span>
             </a>

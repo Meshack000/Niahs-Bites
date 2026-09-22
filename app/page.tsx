@@ -1,13 +1,13 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Category from "@/components/Category";
+import CategoryPreview from "@/components/CategoryPreview";
 
 export default function Home() {
   return (
     <main>
       <Navbar />
       <Hero />
-      <Category/>
+      <CategoryPreview />
     </main>
   );
 }
