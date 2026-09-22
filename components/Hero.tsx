@@ -8,10 +8,6 @@ export default function Hero() {
           
           {/* Content Left */}
           <div className="lg:col-span-6">
-            <span className="font-body text-xs font-bold uppercase tracking-widest text-[#7a3e2e]">
-              Sunyani, Notre Dame
-            </span>
-
             <h1 className="mt-3 font-display text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl md:text-6xl">
               The Best Quality <br />
               <span className="relative inline-block text-[#7a3e2e]">
@@ -59,16 +55,6 @@ export default function Hero() {
               />
             </div>
 
-            <div className="absolute top-4 -left-4 hidden rounded-xl border border-[#4a1f2d]/10 bg-white/90 p-3 shadow-lg sm:block">
-              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#4a1f2d]">
-                Food Lovers
-              </p>
-              <p className="mt-1 text-xs text-[#5a3945]">100+ Happy Customers</p>
-            </div>
-
-            <div className="absolute bottom-5 right-2 rounded-full bg-[#fff5ef] px-4 py-2 text-xs font-bold text-[#7a3e2e] shadow-md">
-              Fastest Delivery 🚚
-            </div>
           </div>
 
         </div>
