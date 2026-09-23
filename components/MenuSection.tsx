@@ -1,27 +1,25 @@
-import type { MenuCategory } from "@/Lib/menuData";
+import { MenuCategory } from "@/lib/menuData";
 
-type MenuSectionProps = {
-  category: MenuCategory;
-};
-
-export default function MenuSection({ category }: MenuSectionProps) {
+export default function MenuSection({ category }: { category: MenuCategory }) {
   return (
-    <section id={category.id} className="scroll-mt-24">
-      <div className="mb-5 flex items-end justify-between gap-4 border-b border-primary/15 pb-3">
-        <h2 className="font-display text-2xl text-primary md:text-3xl">
-          {category.title}
-        </h2>
-        {category.note && <p className="font-body text-xs text-text/60">{category.note}</p>}
-      </div>
-
-      <div className="divide-y divide-primary/10">
+    <div id={category.id} className="scroll-mt-24">
+      <h2 className="font-display text-2xl md:text-3xl text-primary mb-6">
+        {category.title}
+      </h2>
+      <ul className="space-y-3">
         {category.items.map((item) => (
-          <div key={item.name} className="flex items-center justify-between gap-6 py-3 font-body text-sm">
+          <li
+            key={item.name}
+            className="flex items-baseline gap-3 font-body text-sm md:text-base"
+          >
             <span className="text-text">{item.name}</span>
-            <span className="shrink-0 font-semibold text-primary">{item.price}</span>
-          </div>
+            <span className="flex-1 border-b border-dotted border-text/25 translate-y-[-4px]" />
+            <span className="text-primary font-semibold whitespace-nowrap">
+              {item.price}
+            </span>
+          </li>
         ))}
-      </div>
-    </section>
+      </ul>
+    </div>
   );
 }
