@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -21,18 +22,18 @@ export default function Navbar() {
 
         <nav className="hidden items-center gap-8 font-body text-sm text-text md:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="transition-colors hover:text-primary">
+            <Link key={link.href} href={link.href} className="transition-colors hover:text-primary">
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
-        <a
+        <Link
           href="/#contact"
           className="hidden rounded-full bg-primary px-5 py-2 text-sm font-body text-bg transition-colors hover:bg-primary-dark md:inline-block"
         >
           Order Now
-        </a>
+        </Link>
 
         <button
           onClick={() => setOpen(!open)}
@@ -54,23 +55,23 @@ export default function Navbar() {
       >
         <nav className="flex flex-col gap-1 px-6 pb-6 font-body text-text">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="border-b border-primary/10 py-2 last:border-0"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
-          <a
+          <Link
             href="/#contact"
             onClick={() => setOpen(false)}
             className="mt-4 rounded-full bg-primary px-5 py-2.5 text-center text-sm text-bg"
           >
             Order Now
-          </a>
+          </Link>
         </nav>
       </div>
     </header>

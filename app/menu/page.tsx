@@ -1,7 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MenuSection from "@/components/MenuSection";
-import { menuCategories } from "@/lib/menuData";
+import { menuCategories } from "@/Lib/menuData";
 
 export default function MenuPage() {
   return (
