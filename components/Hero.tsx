@@ -37,7 +37,7 @@ export default function Hero() {
 
             <div className="mt-8 flex items-center gap-4">
               <a
-                href="#menu"
+                href="/menu"
                 className="rounded-full bg-[#7a3e2e] px-7 py-3.5 font-body text-sm font-semibold text-white shadow-md transition-all hover:bg-[#683827] hover:shadow-lg"
               >
                 Get Started

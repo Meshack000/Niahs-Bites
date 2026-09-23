@@ -1,9 +1,9 @@
 const categories = [
-  { name: "Cakes & Pastries", blurb: "Cakes, parfaits, loaves & doughnuts", icon: "🎂" },
-  { name: "Cupcakes", blurb: "With or without frosting", icon: "🧁" },
-  { name: "Yoghurt", blurb: "Fresh & Greek, any size", icon: "🥛" },
-  { name: "Frozen Spring Rolls", blurb: "Veg, beef & bean fillings", icon: "🥢" },
-  { name: "Frozen Samosa", blurb: "Chicken, beef & veg fillings", icon: "🥟" },
+  { name: "Cakes & Pastries", blurb: "Cakes, parfaits, loaves & doughnuts", href: "/menu#cakes-pastries", icon: "🎂" },
+  { name: "Cupcakes", blurb: "With or without frosting", href: "/menu#cupcakes-frosting", icon: "🧁" },
+  { name: "Yoghurt", blurb: "Fresh & Greek, any size", href: "/menu#yoghurt", icon: "🥛" },
+  { name: "Frozen Spring Rolls", blurb: "Veg, beef & bean fillings", href: "/menu#spring-rolls", icon: "🥢" },
+  { name: "Frozen Samosa", blurb: "Chicken, beef & veg fillings", href: "/menu#samosa", icon: "🥟" },
 ];
 
 export default function CategoryPreview() {
@@ -23,7 +23,7 @@ export default function CategoryPreview() {
           {categories.map((cat) => (
             <a
               key={cat.name}
-              href="#contact"
+              href={cat.href}
               className="group flex flex-col justify-between rounded-2xl border border-primary/10 bg-white p-3 text-center transition-all duration-200 hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg md:p-6"
             >
               <div>

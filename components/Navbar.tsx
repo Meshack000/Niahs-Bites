@@ -6,10 +6,10 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   const links = [
-    { href: "#home", label: "Home" },
-    { href: "#menu", label: "Menu" },
-    { href: "#about", label: "About" },
-    { href: "#contact", label: "Contact" },
+    { href: "/", label: "Home" },
+    { href: "/menu", label: "Menu" },
+    { href: "/#about", label: "About" },
+    { href: "/#contact", label: "Contact" },
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function Navbar() {
         </nav>
 
         <a
-          href="#contact"
+          href="/#contact"
           className="hidden rounded-full bg-primary px-5 py-2 text-sm font-body text-bg transition-colors hover:bg-primary-dark md:inline-block"
         >
           Order Now
@@ -65,7 +65,7 @@ export default function Navbar() {
           ))}
 
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
             className="mt-4 rounded-full bg-primary px-5 py-2.5 text-center text-sm text-bg"
           >
