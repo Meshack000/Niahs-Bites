@@ -18,7 +18,7 @@ export default function Contact() {
           we reply fast.
         </p>
 
-        
+        <a
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"

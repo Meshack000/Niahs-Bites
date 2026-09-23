@@ -1,4 +1,4 @@
-import { MenuCategory } from "@/lib/menuData";
+import type { MenuCategory } from "@/Lib/menuData";
 
 export default function MenuSection({ category }: { category: MenuCategory }) {
   return (

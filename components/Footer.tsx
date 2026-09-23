@@ -6,7 +6,7 @@ export default function Footer() {
         <p className="font-body text-xs text-bg/60 text-center">
           © {new Date().getFullYear()} Niah&apos;s Bites. All rights reserved.
         </p>
-        
+        <a
           href="https://wa.me/233558795810"
           target="_blank"
           rel="noopener noreferrer"
